@@ -14,12 +14,12 @@ var NoteSchema = new Schema({
 
   body: {
       type: String
-  }, 
+  } 
 
-  Article: {
-      type: Schema.Types.ObjectId,
-      ref: "Article"
-  }
+//   Article: {
+//       type: Schema.Types.ObjectId,
+//       ref: "Article"
+//   }
 
 });
 

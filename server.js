@@ -3,20 +3,25 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var mongoose = require("mongoose");
 var cheerio = require("cheerio");
-var request = require("request")
+var axios = require("axios")
 var path = require("path");
+var logger = require("morgan");
 
-//require folders so server can access them
+//require models folder so server has access 
 var db = require("./models");
-require("./controllers/controller.js");
+
 
 var PORT = process.env.PORT || 3001;
 
 // Initialize Express
 var app = express();
 
+// Use morgan logger for logging requests
+app.use(logger("dev"));
+
 // use bodyparser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 
@@ -26,6 +31,9 @@ app.use(express.static('public'));
 //handlebars configuration
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+//require controllers folder so server has access
+require("./controllers/controller.js")(app);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
