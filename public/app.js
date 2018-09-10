@@ -4,7 +4,7 @@ $('#button').click(function() {
     //event.preventDefault();
 
 // Grab all articles on /articles route as a json object
-$.getJSON("/articles", function(data) {
+$.getJSON("/scrape", function(data) {
     // loop through each one and for each object
     for (var i = 0; i < data.length; i++) {
       // append to the articles div and display on the page

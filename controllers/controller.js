@@ -54,7 +54,7 @@ app.get("/", function(req, res) {
             });
             
             // If we were able to successfully scrape and save an Article, send a message to the client
-            res.json("Scrape Complete");
+            res.redirect('/articles')
 
         })
 
