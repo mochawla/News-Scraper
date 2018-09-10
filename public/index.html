@@ -2,46 +2,67 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
+    <title>News Scraper</title>
     <style>
-      body { background-color: green }
+      body {
+        background: url(../images/newspaper.jpeg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+       }
+
       #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
+          margin-bottom: 100px;
       }
+
+      #articles{
+          border: 5px solid #453823;
+      }
+
+      #title{
+          margin-left: auto;
+          margin-right: auto;
+          width: 300px;
+          margin-bottom: 30px;
+          color: #453823;
+      }
+
+      #scrapebtn {
+          margin-bottom: 30px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 225px;
+      }
+
       #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
+          margin-right: 120px;
+          margin-left: 120px;
       }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
+
+      #button{
+          color: #453823;
+          border: 5px solid #453823;
+          background-color: transparent;
       }
     </style>
   </head>
+
   <body>
+
     <div id="wrapper">
+
+        <div id="title">
       <h1>News Scraper</h1>
-      <div id="articles"></div>
-      <div id="notes"></div>
     </div>
+
+    <div id= "scrapebtn">
+      <input type = "button" value = "Scrape Articles" id= "button" />
+    </div>
+
+      <div id="articles"></div>
+
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
