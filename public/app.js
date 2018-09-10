@@ -14,17 +14,17 @@ $.getJSON("/articles", function(data) {
   
   
 // ajax call for the Article
-$.ajax({
-    method: "GET",
-    url: "/articles/" + thisId
-  })  
+// $.ajax({
+//     method: "GET",
+//     url: "/articles/" + thisId
+//   })  
 
-  // With that done, add the note information to the page
-  .then(function(data) {
-    console.log(data);
-    // The title of the article
-    $("#notes").append("<h2>" + data.title + "</h2>");
+//   // With that done, add the note information to the page
+//   .then(function(data) {
+//     console.log(data);
+//     // The title of the article
+//     $("#notes").append("<h2>" + data.title + "</h2>");
 
-  });
+//   });
 
 })
